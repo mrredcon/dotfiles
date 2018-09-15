@@ -6,6 +6,7 @@ brew 'coreutils'
 brew 'openssl'
 brew 'unrar'
 brew 'wget'
+brew 'grc'
 
 cask 'firefox'
 cask 'google-chrome'
