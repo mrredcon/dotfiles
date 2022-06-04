@@ -6,5 +6,8 @@ if [ ! -f "/etc/arch-release" ]; then
  exit 
 fi
 
-makepkg -si --needed
+mkdir -p ~/AUR/st/ && cd ~/.dotfiles/st/
+cp config.h PKGBUILD README.terminfo.rst terminfo.patch ~/AUR/st/
+cd ~/AUR/st/
+makepkg -si --needed --noconfirm
 

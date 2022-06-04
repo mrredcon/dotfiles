@@ -7,12 +7,12 @@ if [ ! -f "/etc/arch-release" ]; then
 fi
 
 # Nerdtree shows file tree
-sudo pacman -S vim-nerdtree --needed
+sudo pacman -S vim-nerdtree --needed --noconfirm
 
 # YouCompleteMe from the AUR
 mkdir -p ~/AUR
 git clone https://aur.archlinux.org/vim-youcompleteme-git.git ~/AUR/vim-youcompleteme-git
 cd ~/AUR/vim-youcompleteme-git
-makepkg -si --needed
+makepkg -si --needed --noconfirm
 
 

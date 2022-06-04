@@ -7,5 +7,5 @@ if [ ! -f "/etc/arch-release" ]; then
 fi
 
 # grml config
-sudo pacman -S grml-zsh-config --needed
+sudo pacman -S grml-zsh-config --needed --noconfirm
 
