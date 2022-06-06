@@ -6,6 +6,6 @@ if [ ! -f "/etc/arch-release" ]; then
  exit 
 fi
 
-# grml config
-sudo pacman -S grml-zsh-config --needed --noconfirm
+# grml config and xdotool
+sudo pacman -S grml-zsh-config xdotool --needed --noconfirm
 
