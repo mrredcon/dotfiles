@@ -9,5 +9,5 @@ fi
 mkdir -p ~/AUR/st/ && cd ~/.dotfiles/st/
 cp config.h PKGBUILD README.terminfo.rst terminfo.patch ~/AUR/st/
 cd ~/AUR/st/
-makepkg -sfi --needed --noconfirm
+makepkg -si --noconfirm
 
