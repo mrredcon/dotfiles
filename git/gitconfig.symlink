@@ -10,3 +10,5 @@
         excludesfile = ~/.gitignore
         editor = vim
 
+[init]
+	defaultBranch = master
