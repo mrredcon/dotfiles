@@ -7,5 +7,5 @@ if [ ! -f "/etc/arch-release" ]; then
 fi
 
 # grml config and xdotool
-sudo pacman -S grml-zsh-config xdotool --needed --noconfirm
+sudo pacman -S xdotool --needed --noconfirm
 
