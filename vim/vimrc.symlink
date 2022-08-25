@@ -25,6 +25,14 @@ cmap w!! w !sudo tee > /dev/null %
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " Replace YCM complete window with a popup
-set previewpopup=height:10,width:60,highlight:PMenuSbar
-set completeopt+=popup
-set completepopup=height:15,width:60,border:off,highlight:PMenuSbar
+if exists('+previewpopup')
+	set previewpopup=height:10,width:60,highlight:PMenuSbar
+endif
+
+if has('textprop')
+	set completeopt+=popup
+endif
+
+if exists('+completepopup')
+	set completepopup=height:15,width:60,border:off,highlight:PMenuSbar
+endif
