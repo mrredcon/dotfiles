@@ -36,3 +36,5 @@ endif
 if exists('+completepopup')
 	set completepopup=height:15,width:60,border:off,highlight:PMenuSbar
 endif
+
+setlocal keywordprg+=\ 3
