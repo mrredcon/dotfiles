@@ -1,9 +1,8 @@
 #!/bin/bash
-C=`xdotool search --class st | tail -1`
+C=`xdotool search --class $1 | tail -1`
 if [ -z "$C" ]
 then
-    `st &`
+    `$1 &`
 else
     xdotool windowactivate --sync $C
 fi
-
