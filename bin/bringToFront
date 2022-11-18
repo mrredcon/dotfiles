@@ -1,8 +1,18 @@
 #!/bin/bash
-C=`xdotool search --class $1 | tail -1`
-if [ -z "$C" ]
-then
-    `$1 &`
-else
-    xdotool windowactivate --sync $C
+
+cmd="$@"
+# command line to be run. Note that the resulting
+# process will hold this in /proc/PID/cmdline 
+
+pid=`pgrep -nf "^$cmd$"`
+# most recent process having "$cmd" in /proc/PID/cmdline
+
+if [ -z "$pid" ]; then # no pid
+	    exec $cmd
+	        # run command
+	else
+		    winid=`xdotool search --all --pid $pid | head -1`
+		        # first visible window owned by pid
+			    xdotool windowactivate $winid
+			        # give window focus
 fi
