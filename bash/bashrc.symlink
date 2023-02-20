@@ -1,0 +1,16 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    tmux attach || tmux >/dev/null 2>&1
+fi
+
+alias ls='ls --color=auto'
+PS1='[\u@\h \w]\$ '
+alias vim='gvim -v'
+export EDITOR="gvim -v"
+export VISUAL="$EDITOR"

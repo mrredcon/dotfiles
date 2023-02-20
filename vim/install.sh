@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+mkdir -p ~/.vim/colors
+cp ~/.dotfiles/vim/solarized.vim ~/.vim/colors && echo 'Installed solarized vim colorscheme'
+
 # Check if running Arch
 if [ ! -f "/etc/arch-release" ]; then
  exit 
