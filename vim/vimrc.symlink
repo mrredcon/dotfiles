@@ -9,6 +9,7 @@ colorscheme solarized
 
 if has('gui_running')
 	set background=light
+	set guicursor+=a:blinkon0
 else
 	set background=dark
 endif
