@@ -15,4 +15,6 @@ alias vim='gvim -v'
 export EDITOR="gvim -v"
 export VISUAL="$EDITOR"
 
+export PATH="$HOME/bin:$PATH"
+
 source ~/.localrc

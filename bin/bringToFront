@@ -11,7 +11,7 @@ if [ -z "$pid" ]; then # no pid
 	    exec $cmd
 	        # run command
 	else
-		    winid=`xdotool search --all --pid $pid | head -1`
+		    winid=`xdotool search --desktop 0 --all --pid $pid | head -1`
 		        # first visible window owned by pid
 			    xdotool windowactivate $winid
 			        # give window focus
