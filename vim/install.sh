@@ -1,8 +1,10 @@
 #!/bin/bash
 set -e
 
+DIR=$(dirname "$(readlink -f "$0")")
+
 mkdir -p ~/.vim/colors
-cp ~/.dotfiles/vim/solarized.vim ~/.vim/colors && echo 'Installed solarized vim colorscheme'
+cp "$DIR/solarized.vim" ~/.vim/colors && echo 'Installed solarized vim colorscheme'
 
 # Check if running Arch
 if [ ! -f "/etc/arch-release" ]; then

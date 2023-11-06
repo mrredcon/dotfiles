@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
-set -x
+
+DIR=$(dirname "$(readlink -f "$0")")
 
 mkdir -p ~/.config/xfce4/xfconf/xfce-perchannel-xml
-cp xfce4-panel.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+cp $DIR/xfce4-panel.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/ && echo 'Installed xfce4-panel.xml'
+
+mkdir -p ~/.config/xfce4/terminal
+cp $DIR/terminalrc ~/.config/xfce4/terminal/ && echo 'Installed xfce terminalrc'
