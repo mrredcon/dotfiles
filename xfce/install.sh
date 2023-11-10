@@ -12,4 +12,4 @@ echo 'Configured xfce panel clock'
 xfconf-query -c xfce4-keyboard-shortcuts --create -p '/commands/custom/<Alt>backslash' -s "$HOME/bin/bringToFront xfce4-terminal" -t 'string' && echo 'Added bringToFront shortcut'
 
 mkdir -p ~/.config/xfce4/terminal
-cp $DIR/terminalrc ~/.config/xfce4/terminal/ && echo 'Installed xfce terminalrc'
+ln -s $DIR/terminalrc ~/.config/xfce4/terminal/ && echo 'Installed xfce terminalrc'
