@@ -35,4 +35,5 @@ MiscShowUnsafePasteDialog=TRUE
 MiscRightClickAction=TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU
 TabActivityColor=#dc322f
 TitleMode=TERMINAL_TITLE_HIDE
+ScrollingBar=TERMINAL_SCROLLBAR_NONE
 
