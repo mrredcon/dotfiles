@@ -4,3 +4,4 @@ bind-key Left  select-pane -L
 bind-key Right select-pane -R
 
 set -g status-right "#{=21:pane_title}"
+set -s default-terminal 'tmux-256color'
