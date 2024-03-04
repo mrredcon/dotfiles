@@ -5,35 +5,16 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Base16 Shell
-BASE16_SHELL_PATH="$HOME/.config/base16-shell"
-[ -n "$PS1" ] && \
-  [ -s "$BASE16_SHELL_PATH/profile_helper.sh" ] && \
-    source "$BASE16_SHELL_PATH/profile_helper.sh"
-
-# If tmux is installed AND we are in a GUI AND we are not already attached to tmux...
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
-	# ...then either connect to an existing tmux instance, or create a new one
-	tmux attach || tmux >/dev/null 2>&1
+    tmux attach || tmux >/dev/null 2>&1
 fi
 
-PS1='[\u@\h \w]\$ '
-
 alias ls='ls --color=auto'
+PS1='[\u@\h \w]\$ '
 alias vim='gvim -v'
-alias light='base16_solarized-light'
-alias dark='base16_solarized-dark'
-
 export EDITOR="gvim -v"
 export VISUAL="$EDITOR"
+
 export PATH="$HOME/bin:$PATH"
 
 source ~/.localrc
-
-currentHour=$(date +%H)
-
-if [[ "$currentHour" -ge 6 ]] && [[ "$currentHour" -lt 18 ]]; then
-	light
-else
-	dark
-fi
