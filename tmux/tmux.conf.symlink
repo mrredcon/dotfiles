@@ -3,5 +3,9 @@ bind-key Down  select-pane -D
 bind-key Left  select-pane -L
 bind-key Right select-pane -R
 
-set -g status-right "#{=21:pane_title}"
+# set -g status-right "#{=21:pane_title}"
+set -g status-right "#H %I:%M %p"
+# set -g status-right "#H"
 set -s default-terminal 'tmux-256color'
+
+set -g allow-passthrough 1

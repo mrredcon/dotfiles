@@ -4,15 +4,23 @@ filetype plugin on
 filetype indent on
 
 syntax on
-set background=dark
-colorscheme solarized
 
 if has('gui_running')
-	set background=light
-	set guicursor+=a:blinkon0
-	set guifont=Monospace\ 12
-else
-	set background=dark
+ 	set guicursor+=a:blinkon0
+ 	set guifont=Monospace\ 12
+
+	let currentHour = system("date +%H")
+	if currentHour >= 6 && currentHour < 18
+		colorscheme base16-solarized-light
+	else
+		colorscheme base16-solarized-dark
+	endif
+endif
+
+if exists('$BASE16_THEME')
+      \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
+    let base16colorspace=256
+    colorscheme base16-$BASE16_THEME
 endif
 
 set number
@@ -25,6 +33,12 @@ set wildmenu
 " an all lowercase search will be case-insensitive;
 " use \c to force ignorecase and \C to force case-sensitivity
 set smartcase
+
+" swap between light and dark color schemes
+nnoremap <leader>l :colorscheme base16-solarized-light<cr>
+nnoremap <leader>d :colorscheme base16-solarized-dark<cr>
+
+nnoremap <leader><space> :noh<cr>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
@@ -49,3 +63,4 @@ if exists('+completepopup')
 endif
 
 setlocal keywordprg+=\ 3
+
