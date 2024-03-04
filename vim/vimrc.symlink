@@ -5,14 +5,12 @@ filetype indent on
 
 syntax on
 set background=dark
-colorscheme solarized
 
 if has('gui_running')
 	set background=light
 	set guicursor+=a:blinkon0
 	set guifont=Monospace\ 12
-else
-	set background=dark
+	colorscheme solarized
 endif
 
 set number
