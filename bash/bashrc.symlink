@@ -17,4 +17,6 @@ export VISUAL="$EDITOR"
 
 export PATH="$HOME/bin:$PATH"
 
-source ~/.localrc
+if [[ -f "$HOME/.localrc" ]]; then
+	source ~/.localrc
+fi
