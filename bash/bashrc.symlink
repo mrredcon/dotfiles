@@ -11,8 +11,14 @@ fi
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \w]\$ '
-alias vim='gvim -v'
-export EDITOR="gvim -v"
+
+if [[ -x /usr/bin/gvim ]]; then
+	alias vim='gvim -v'
+	export EDITOR="gvim -v"
+else
+	export EDITOR="vim"
+fi
+
 export VISUAL="$EDITOR"
 
 export PATH="$HOME/bin:$PATH"
