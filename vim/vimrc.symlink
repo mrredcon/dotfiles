@@ -46,4 +46,6 @@ if exists('+completepopup')
 	set completepopup=height:15,width:60,border:off,highlight:PMenuSbar
 endif
 
+let g:fakeclip_provide_clipboard_key_mappings = !empty($WAYLAND_DISPLAY)
+
 setlocal keywordprg+=\ 3

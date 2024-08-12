@@ -6,6 +6,10 @@ DIR=$(dirname "$(readlink -f "$0")")
 mkdir -p ~/.vim/colors
 ln -s "$DIR/solarized.vim" ~/.vim/colors && echo 'Installed solarized vim colorscheme'
 
+# Download vim-fakeclip so we can copy/paste in Wayland
+mkdir -p ~/.vim/pack/vendor/start
+git clone --depth 1 https://github.com/kana/vim-fakeclip ~/.vim/pack/vendor/start/fakeclip
+
 # Check if running Arch
 if [ ! -f "/etc/arch-release" ]; then
  exit 
