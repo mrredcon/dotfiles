@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+	echo "Usage: $0 length"
+	exit 1
+fi
+
+case "$1" in
+	''|*[!0-9]*)
+		echo "Length must be numeric."
+		exit 1
+	;;
+esac
+
+LC_ALL=C tr -dc '[:alnum:]' </dev/urandom | head -c "$1"; echo
+
