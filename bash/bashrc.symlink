@@ -21,6 +21,7 @@ fi
 
 export VISUAL="$EDITOR"
 
+export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 if [[ -f "$HOME/.localrc" ]]; then

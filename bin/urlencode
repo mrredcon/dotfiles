@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+
+import sys
+import urllib.parse
+
+if len(sys.argv) != 2:
+    print(f'Usage: {sys.argv[0]} string_to_encode')
+    sys.exit(1)
+
+print(urllib.parse.quote(sys.argv[1]))
+

@@ -11,6 +11,8 @@ fi
 export CLICOLOR=1
 PROMPT="[%n@%m %~]%# "
 
+export PATH="$HOME/.dotfiles/bin:$PATH"
+
 if [[ -d "$HOME/bin" ]]; then
 	export PATH="$HOME/bin:$PATH"
 fi
