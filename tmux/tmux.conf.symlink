@@ -5,3 +5,7 @@ bind-key Right select-pane -R
 
 set -g status-right "#{=21:pane_title}"
 set -s default-terminal 'tmux-256color'
+
+setw -g mode-keys vi
+if-shell '[ $(uname) = "Darwin" ]' 'set -s copy-command "pbcopy"'
+
