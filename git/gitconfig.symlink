@@ -19,3 +19,5 @@
 	directory = /opt/flutter
 [pull]
 	rebase = true
+[alias]
+	amend = commit --amend --no-edit
