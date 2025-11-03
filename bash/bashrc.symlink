@@ -5,6 +5,17 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+
+if [[ -f "$HOME/.localrc" ]]; then
+	source ~/.localrc
+fi
+
+if [ -x "$(command -v tmux)" ] && [[ (-n "${DISPLAY}") || "$(uname)" == "Darwin" ]] && [ -z "${TMUX}" ]; then
+    tmux attach || tmux >/dev/null 2>&1
+fi
+
 alias ls='ls --color=auto'
 PS1='[\u@\h \w]\$ '
 
@@ -17,13 +28,3 @@ fi
 
 export VISUAL="$EDITOR"
 
-export PATH="$HOME/.dotfiles/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
-
-if [[ -f "$HOME/.localrc" ]]; then
-	source ~/.localrc
-fi
-
-if [ -x "$(command -v tmux)" ] && [[ (-n "${DISPLAY}") || "$(uname)" == "Darwin" ]] && [ -z "${TMUX}" ]; then
-    tmux attach || tmux >/dev/null 2>&1
-fi
